@@ -2,7 +2,7 @@
     color: #ffe6e6;
     background-color: #ffcc00;
     margin-top: 0;
-    margin: 10px 10px 0px 10px;
+    margin: 10px 0px 0px 0px;
     padding: 30px 20px 20px 40px;
 }
 
@@ -21,7 +21,7 @@
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Lobster', cursive;
+    font-family: 'Comic Sans MS', cursive;
 }
 
 .date {

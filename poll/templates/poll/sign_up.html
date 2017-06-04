@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/poll.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/singup.css' %}">
+    <title>Home</title>
+</head>
+<body>
+<div class="page-header">
+    <h1><a style="font-size: 60px; color: #f2ffcc;" href="/">Minguinho's schedule</a></h1>
+</div>
+<ul class="nav nav-pills">
+    <li style="color:#ffffff; font-family: 'Comic Sans MS'; background-color: #ffcc00; " role="presentation"><a href="/">Home</a> </li>
+    <li style="color:#ffcc00; font-family: 'Comic Snas MS'; background-color: #fff5cc;" role="presentation"><a href="/post/list">Post List</a> </li>
+    <li style="color:#ffcc00; font-family: 'Comic Snas MS'; background-color: #fff5cc;" role="presentation"><a href="/post/new">Add</a></li>
+</ul>
+<form class="form" name="write_form_member" method="post">
+    <table width="940" style="padding: 5px 0px;">
+        <tr line-height="2" bgcolor="#ffff99"><td colspan="2"></td> </tr>
+        <tr style="padding: 5px 0px;">
+            <th>name</th>
+            <td><input type="text" name="mbname"></td>
+        </tr>
+        <tr style="padding: 5px 0px;">
+            <th>ID</th>
+            <td><input type="text" name="cursor:pointer">
+            </td>
+        </tr>
+        <tr style="padding: 5px 0px;">
+            <th>PASSWORD</th>
+            <td><input type="password" name="mbpw"></td>
+        </tr>
+        <tr style="padding: 5px 0px;">
+            <th>PASSWORD(Again)</th>
+            <td><input type="password" name="mbpw_re"></td>
+        </tr>
+        <tr style="padding: 5px 0px;">
+            <th>e-mail</th>
+            <td>
+                <input type="text" name="email">@
+                <input type="text" name="email_dns">
+                    <select name="emailaddr">
+                        <option value="">Direct input</option>
+                        <option value="gmail.com">gmail.com</option>
+                        <option value="kaist.ac.kr">kaist.ac.kr</option>
+                        <option value="naver.com">naver.com</option>
+                        <option value="daum.net">daum.net</option>
+                    </select>
+            </td>
+        </tr>
+
+        <tr style="padding: 5px 0px;" bgcolor="#FFC8C3"><td colspan="2"></td></tr>
+        <tr style="padding: 5px 0px;">
+            <td colspan="2" align="ringht">
+                <input type="submit" value="Singup">
+                <input type="reset" value="Cnacel">
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

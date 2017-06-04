@@ -10,18 +10,26 @@
 </head>
 <body>
 <div class="page-header">
-    <h1><a style="font-size: 60px; color: #f2ffcc;" href="/admin">Minguinho's schedule</a></h1>
+    <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+    <h1><a style="font-size: 60px; color: #f2ffcc;" href="/">Minguinho's schedule</a></h1>
 </div>
+
+<ul class="nav nav-pills">
+    <li style="background-color:#fff5cc; font-family: 'Comic Sans MS'; color: #ffcc00; " role="presentation"><a href="/">Home</a> </li>
+    <li style="background-color:#ffcc00; font-family: 'Comic Snas MS'; color: #fff5cc;" role="presentation"><a href="/post/list">Post List</a> </li>
+    <li style="color:#ffcc00; font-family: 'Comic Snas MS'; background-color: #fff5cc;" role="presentation"><a href="/post/new">Add</a></li>
+</ul>
 
 <div class="content container">
     <div class="row">
         <div class="col-md-8">
             {% block content %}
             {% for post in posts %}
-            <div style="margin-left: 10px; margin-right: 10px;" class="post">
+            <div style="margin-left: 10px; padding: 0px 12px; margin-top: 5px; margin-right: 10px;" class="panel panel-warning">
                 <h2><a style="color:#ffb366; font-size: 30px;" href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a> </h2>
                 <div class="date">
                     <p>published: {{ post.published_date }}</p>
+                    <p>specific date and time: {{ post.specific_date_and_time }}</p>
                 </div>
                 <p style="font-size: 18px">{{ post.text|linebreaksbr }}</p>
             </div>

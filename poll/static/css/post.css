@@ -1,0 +1,12 @@
+.post{
+    font-family: 'Comic Sans MS', cursive;
+    margin: 10px 10px 0px 10px;
+    padding: 30px 20px 20px 40px;
+}
+.page-header {
+    color: #ffe6e6;
+    background-color: #ffcc00;
+    margin-top: 0;
+    margin: 10px 10px 0px 10px;
+    padding: 30px 20px 20px 40px;
+}
