@@ -23,7 +23,7 @@ def post_new(request):
             post.author = request.user
             post.published_date = timezone.now()
             post.save()
-            return redirect('poll.views.post_datail', pk=post.pk)
+            return redirect('post_datail', pk=post.pk)
     else:
         form = PostForm()
     return render(request, 'poll/post_substance.html', {'form': form})
