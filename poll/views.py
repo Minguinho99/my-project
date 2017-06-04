@@ -4,6 +4,9 @@ from .models import Post
 from django.shortcuts import render, get_object_or_404, redirect
 from .forms import PostForm
 
+from django.views.generic import CreateView, UpdateView, DeleteView
+from .models import Post
+
 def home(request):
     return render(request, 'poll/home.html', {})
 
@@ -23,13 +26,34 @@ def post_new(request):
             post.author = request.user
             post.published_date = timezone.now()
             post.save()
-            return redirect('post_datail', pk=post.pk)
+            return redirect('post_detail', pk=post.pk)
     else:
         form = PostForm()
     return render(request, 'poll/post_substance.html', {'form': form})
 
-def longin(request):
-    return render(request, 'poll/login.html', {})
 
 def signup(request):
     return render(request, 'poll/sign_up.html', {})
+
+
+
+class PostCreateView(CreateView):
+    model = Post
+    fields = [
+        'content',
+    ]
+    template_name = "post_new.html"
+    success_url = "/post/list/"
+
+class PostUpdateView(UpdateView):
+    model = Post
+    fields = [
+        'content',
+    ]
+    template_name = "post_update.html"
+    success_url = "/post/list/"
+
+class PostDeleteView(DeleteView):
+    model = Post
+    template_name = "post_update.html"
+    success_url = "/post/list/"

@@ -16,7 +16,17 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
+from django.contrib.auth import views as auth_views
+
+from poll.views import PostDeleteView, PostCreateView, PostUpdateView
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^account/login/$', auth_views.LoginView),
+    url(r'^account/logout/$', auth_views.LogoutView),
+    url(r'^post/create/$', PostCreateView.as_view(), name='post-create'),
+    url(r'^post/(?P<pk>[0-9]+)/delete/$', PostDeleteView.as_view(), name='post-delete'),
+    url(r'^post/update/$', PostUpdateView.as_view(), name='post-update'),
+
     url(r'', include('poll.urls')),
 ]
