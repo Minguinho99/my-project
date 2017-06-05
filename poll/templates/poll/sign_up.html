@@ -19,12 +19,13 @@
     <li style="color:#ffcc00; font-family: 'Comic Snas MS'; background-color: #fff5cc;" role="presentation"><a href="/post/new">Add</a></li>
 </ul>
 <form class="form" name="write_form_member" method="post">
+    {% csrf_token %}
     <table width="940" style="padding: 5px 0px;">
         <tr bgcolor="#ffff99"><td colspan="2"></td> </tr>
-        <tr style="padding: 5px 0px;">
-            <th>name</th>
-            <td><input type="text" name="mbname"></td>
-        </tr>
+        <!--<tr style="padding: 5px 0px;">-->
+            <!--<th>name</th>-->
+            <!--<td><input type="text" name="mbname"></td>-->
+        <!--</tr>-->
         <tr style="padding: 5px 0px;">
             <th>ID</th>
             <td><input type="text" name="cursor:pointer">
@@ -38,26 +39,26 @@
             <th>PASSWORD(Again)</th>
             <td><input type="password" name="mbpw_re"></td>
         </tr>
-        <tr style="padding: 5px 0px;">
-            <th>e-mail</th>
-            <td>
-                <input type="text" name="email">@
-                <input type="text" name="email_dns">
-                    <select name="emailaddr">
-                        <option value="">Direct input</option>
-                        <option value="gmail.com">gmail.com</option>
-                        <option value="kaist.ac.kr">kaist.ac.kr</option>
-                        <option value="naver.com">naver.com</option>
-                        <option value="daum.net">daum.net</option>
-                    </select>
-            </td>
-        </tr>
+        <!--<tr style="padding: 5px 0px;">-->
+            <!--<th>e-mail</th>-->
+            <!--<td>-->
+                <!--<input type="text" name="email">@-->
+                <!--<input type="text" name="email_dns">-->
+                    <!--<select name="emailaddr">-->
+                        <!--<option value="">Direct input</option>-->
+                        <!--<option value="gmail.com">gmail.com</option>-->
+                        <!--<option value="kaist.ac.kr">kaist.ac.kr</option>-->
+                        <!--<option value="naver.com">naver.com</option>-->
+                        <!--<option value="daum.net">daum.net</option>-->
+                    <!--</select>-->
+            <!--</td>-->
+        <!--</tr>-->
 
         <tr style="padding: 5px 0px;" bgcolor="#FFC8C3"><td colspan="2"></td></tr>
         <tr style="padding: 5px 0px;">
             <td colspan="2" align="ringht">
-                <button type="submit" class="save btn btn-default" style="color: #ffcc00"><a href="/">Sign up</a></button>
-                <button type="reset" class="save btn btn-default" style="color: #ffcc00"><a href="/">Cancel</a></button>
+                <button type="submit" class="save btn btn-default" style="color: #ffcc00">Sign up</button>
+                <button type="reset" class="save btn btn-default" style="color: #ffcc00">Cancel</button>
             </td>
         </tr>
     </table>

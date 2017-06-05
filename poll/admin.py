@@ -1,4 +1,8 @@
 from django.contrib import admin
-from .models import Post
+from django.contrib.sessions.models import Session
 
+from .models import *
+
+admin.site.register(MyUser)
+admin.site.register(Session)
 admin.site.register(Post)

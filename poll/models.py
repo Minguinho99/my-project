@@ -31,3 +31,11 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title + ",   Start Date : " + str(self.start_date) +",  Start TIme : " +str(self.start_time)
+
+class MyUser(models.Model):
+    username = models.CharField(
+		max_length=32
+	)
+    password = models.CharField(
+		max_length=32
+	)
